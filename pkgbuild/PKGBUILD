@@ -24,7 +24,7 @@ depends=(
 
 	# Wayland
 	wlroots       # Biblioteca para composição no Wayland
-	xwayland      # Suporte para aplicativos X11 no Wayland
+	xorg-xwayland      # Suporte para aplicativos X11 no Wayland
 	wayland       # Protocolo Wayland
 	wayland-utils # Ferramentas para Wayland
 	wlr-randr     # Alternativa ao xrandr para Wayland
