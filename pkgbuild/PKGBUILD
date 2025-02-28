@@ -44,7 +44,7 @@ depends=(
 
 	# Extras para integração e personalização
 	packagekit             # Integração com gerenciadores de pacotes
-	enlightenment-themes   # Conjunto de temas para personalização
+#	enlightenment-themes   # Conjunto de temas para personalização
 	network-manager-applet # Ícone de gerenciamento de rede
 	blueman                # Gerenciador de Bluetooth
 
