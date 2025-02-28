@@ -1,3 +1,3 @@
-# pkgbuild-template
+# comm-enlightenment
 
-Package description
+Meta package for enlightenment
