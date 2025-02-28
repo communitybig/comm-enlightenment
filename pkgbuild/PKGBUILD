@@ -49,7 +49,7 @@ depends=(
 	blueman                # Gerenciador de Bluetooth
 
 	# Áudio
-	pulseaudio  # Servidor de som
+  #pulseaudio  # Servidor de som
 	pavucontrol # Controle de volume para PulseAudio
 	pipewire    # Alternativa moderna ao PulseAudio para áudio
 	wireplumber # Gerenciador de sessão para PipeWire
