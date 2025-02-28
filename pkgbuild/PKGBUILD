@@ -12,9 +12,6 @@ md5sums=('SKIP')
 depends=(
 	enlightenment # Gerenciador de janelas principal
 	#efl
-	acpi
-	acpid
-	connman
 	# Xorg
 	xorg-server   # Servidor X11
 	xorg-xinit    # Inicialização do Xorg
@@ -44,12 +41,10 @@ depends=(
 
 	# Extras para integração e personalização
 	packagekit             # Integração com gerenciadores de pacotes
-#	enlightenment-themes   # Conjunto de temas para personalização
 	network-manager-applet # Ícone de gerenciamento de rede
 	blueman                # Gerenciador de Bluetooth
 
 	# Áudio
-  #pulseaudio  # Servidor de som
 	pavucontrol # Controle de volume para PulseAudio
 	pipewire    # Alternativa moderna ao PulseAudio para áudio
 	wireplumber # Gerenciador de sessão para PipeWire
