@@ -18,6 +18,7 @@ depends=(
 	xorg-xrandr   # Configuração de resolução e monitores
 	xorg-xsetroot # Permite definir o papel de parede no Xorg
 	xorg-xrdb     # Banco de dados de recursos do X
+	xterm
 
 	# Wayland
 	wlroots       # Biblioteca para composição no Wayland
@@ -53,8 +54,12 @@ depends=(
 	lightdm             # Gerenciador de login leve
 	lightdm-gtk-greeter # Interface gráfica para LightDM
 	sddm                # Gerenciador de login moderno, compatível com Wayland
+	lxdm
+	lxdm-biglinux-theme
 	# Extras para Wayland
 	waybar # Barra de status alternativa para Wayland
+	gimp
+	brave-browser
 )
 
 # Automatically detect and use the correct install file
