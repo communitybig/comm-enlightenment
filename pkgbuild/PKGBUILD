@@ -21,17 +21,18 @@ depends=(
 	xterm
 
 	# Wayland
-	wlroots       # Biblioteca para composição no Wayland
-	xorg-xwayland      # Suporte para aplicativos X11 no Wayland
-	wayland       # Protocolo Wayland
-	wayland-utils # Ferramentas para Wayland
-	wlr-randr     # Alternativa ao xrandr para Wayland
+	wlroots         # Biblioteca para composição no Wayland
+	xorg-xwayland   # Suporte para aplicativos X11 no Wayland
+	wayland         # Protocolo Wayland
+	wayland-utils   # Ferramentas para Wayland
+	wlr-randr       # Alternativa ao xrandr para Wayland
 
 	# Aplicativos essenciais
-	terminology # Terminal oficial do Enlightenment
-	ephoto      # Visualizador de imagens leve
-	rage        # Leitor de mídia minimalista
-	evisum      # Monitor de sistema gráfico
+	terminology     # Terminal oficial do Enlightenment
+	xfce4-terminal
+	ephoto          # Visualizador de imagens leve
+	rage            # Leitor de mídia minimalista
+	evisum          # Monitor de sistema gráfico
 
 	# Gerenciamento de hardware e energia
 	acpid   # Gerenciamento de eventos de energia
@@ -46,20 +47,26 @@ depends=(
 	blueman                # Gerenciador de Bluetooth
 
 	# Áudio
-	pavucontrol # Controle de volume para PulseAudio
-	pipewire    # Alternativa moderna ao PulseAudio para áudio
-	wireplumber # Gerenciador de sessão para PipeWire
+	pavucontrol           # Controle de volume para PulseAudio
+	pipewire              # Alternativa moderna ao PulseAudio para áudio
+	wireplumber           # Gerenciador de sessão para PipeWire
 
 	# Interface gráfica e login
-	lightdm             # Gerenciador de login leve
-	lightdm-gtk-greeter # Interface gráfica para LightDM
-	sddm                # Gerenciador de login moderno, compatível com Wayland
+	#lightdm             # Gerenciador de login leve
+	#lightdm-gtk-greeter # Interface gráfica para LightDM
+	#sddm                # Gerenciador de login moderno, compatível com Wayland
 	lxdm
 	lxdm-biglinux-theme
 	# Extras para Wayland
-	waybar # Barra de status alternativa para Wayland
-	gimp
+	waybar               # Barra de status alternativa para Wayland
+	firefox
 	brave-browser
+	# packages community
+  auto-tweaks-browser
+  big-store
+  big-webapps
+  comm-webapps
+  comm-restore-config
 )
 
 # Automatically detect and use the correct install file
