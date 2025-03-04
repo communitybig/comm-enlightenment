@@ -56,7 +56,7 @@ depends=(
 	#lightdm-gtk-greeter # Interface gráfica para LightDM
 	#sddm                # Gerenciador de login moderno, compatível com Wayland
 	lxdm
-	lxdm-biglinux-theme
+	#lxdm-biglinux-theme
 	# Extras para Wayland
 	waybar               # Barra de status alternativa para Wayland
 	firefox
@@ -64,8 +64,12 @@ depends=(
 	# packages community
   auto-tweaks-browser
   big-store
+  bigcontrolcenter-base
   comm-webapps
   comm-restore-config
+  timeshift
+  grub-btrfs-timeshift
+  grub-btrfs
 )
 
 # Automatically detect and use the correct install file
