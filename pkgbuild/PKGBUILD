@@ -64,7 +64,6 @@ depends=(
 	# packages community
   auto-tweaks-browser
   big-store
-  big-webapps
   comm-webapps
   comm-restore-config
 )
