@@ -38,7 +38,7 @@ depends=(
   acpid                    # Gerenciamento de eventos de energia
   bluez                    # Suporte a Bluetooth
   connman                  # Gerenciador de conexões de rede
-  econnman                 # Interface gráfica para ConnMan
+#  econnman                 # Interface gráfica para ConnMan
   fprintd                  # Suporte a leitores de impressão digital
   geoclue                  # Serviço de geolocalização
 
