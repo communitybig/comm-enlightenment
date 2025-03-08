@@ -128,10 +128,10 @@ check() {
 }
 
 package() {
-  mkdir -p "${pkgdir}/usr/share/${pkgname}"
-  echo "optdepends='${optdepends[*]}'" > "${pkgdir}/usr/share/${pkgname}/optdepends"
-
 	cd "${srcdir}/${pkgname}"
+
+  mkdir -p "${pkgdir}/usr/share/${pkgname}"
+  printf "%s\n" "${optdepends[@]}" > "${pkgdir}/usr/share/${pkgname}/optdepends"
 
 	# Determine the correct source directory
 	if [ -d "${pkgname}" ]; then

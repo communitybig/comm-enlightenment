@@ -18,13 +18,27 @@ export white="\033[1;37m"
 export bold="\033[1m"
 export reset="\033[0m"
 
+export pkgname=comm-enlightenment
+
 msg() {
 	local msg="$1"
 	echo -e "${green}==>[comm-enlightenment] ${bold}${yellow}${msg}${reset}" >&2
 }
 
+sh_load_optdepends() {
+  local info_file="/usr/share/${pkgname}/optdepends"
+
+  if [[ -f "$info_file" && -r "$info_file" ]]; then
+    mapfile -t optdepends < "$info_file"
+  else
+    msg "${red}Fatal: File $info_file not found or without read permission."
+  fi
+}
+
 post_install() {
-	msg "Initializing system configuration..."
+	msg "Initializing system installation and configuration..."
+
+  sh_load_optdepends
 
 	[[ -e /etc/environment ]] && source /etc/environment
 	: "${IN_CHROOT_INSTALLER:=false}"
@@ -36,6 +50,7 @@ post_install() {
 
 	# Common packages for all GPUs
 	COMMON_PACKAGES=(
+    ${optdepends[@]}
 		mhwd-biglinux
 		mesa
 		lib32-mesa
