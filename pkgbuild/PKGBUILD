@@ -11,7 +11,8 @@ source=("git+${url}.git")
 md5sums=('SKIP')
 depends=(
   enlightenment            # Gerenciador de janelas principal
-
+)
+optdepends=(
   # Xorg
   xorg-server              # Servidor X11
   xorg-xinit               # Inicialização do Xorg
@@ -127,6 +128,8 @@ check() {
 }
 
 package() {
+  echo "optdepends='${optdepends[*]}'" > "${pkgdir}/usr/share/$pkgname/optdepends"
+
 	cd "${srcdir}/${pkgname}"
 
 	# Determine the correct source directory
