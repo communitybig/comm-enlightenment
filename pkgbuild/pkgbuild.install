@@ -122,11 +122,6 @@ EOF
 	mkdir -p /var/lib/lxdm >/dev/null
 	chown -R lxdm:lxdm /var/lib/lxdm >/dev/null
 
-	msg "Enabling Lxdm..."
-	if ! systemctl enable lxdm &>/dev/null; then
-		msg "${red}Error: It went wrong when activating lxdm"
-	fi
-
 	msg "Setting up user..."
 	user=$(awk -F: '$3 >= 1000 && $3 < 65000 { print $1; exit }' /etc/passwd)
 	if $IN_CHROOT_INSTALLER; then
@@ -148,6 +143,13 @@ EOF
 		msg "Nautilus schemas compiled successfully!"
 	else
 		msg "${yellow}Warning: Failed to compile Nautilus schemas. Some features may not work correctly.${reset}"
+	fi
+
+	if ! $IS_UPGRADE; then
+		msg "Enabling Lxdm..."
+		if ! systemctl enable lxdm &>/dev/null; then
+			msg "${red}Error: It went wrong when activating lxdm"
+		fi
 	fi
 
 	if ! $IN_CHROOT_INSTALLER; then
