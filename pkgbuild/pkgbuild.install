@@ -18,6 +18,7 @@ export white="\033[1;37m"
 export bold="\033[1m"
 export reset="\033[0m"
 export pkgname=comm-enlightenment
+declare IS_UPGRADE=false
 
 msg() {
 	local msg="$1"
@@ -150,28 +151,35 @@ EOF
 	fi
 
 	if ! $IN_CHROOT_INSTALLER; then
-		msg "Please wait, Generating initramfs for all kernels..."
-		mkinitcpio -P &>/dev/null
+		if ! $IS_UPGRADE; then
+			msg "Please wait, Generating initramfs for all kernels..."
+			mkinitcpio -P &>/dev/null
 
-		msg "Configuring GRUB..."
-		# Change GRUB config
-		sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=.*|GRUB_CMDLINE_LINUX_DEFAULT="quiet splash plymouth.enable=1 loglevel=4 libata.noacpi=1 acpi=force apm=power-off nowatchdog tsc=nowatchdog cryptomgr.notests no_timer_check rcupdate.rcu_expedited=1 intel_pstate=active amd_pstate=active cpuidle.governor=teo split_lock_detect=off clearcpuid=514 transparent_hugepage=never skew_tick=1 intremap=off nosoftlockup audit=0 nomce systemd.show_status=auto rd.udev.log_level=3 apparmor=1 security=apparmor vconsole.font=Uni2-Fixed16 intel_iommu=on amd_iommu=on tdx=on nvme_load=yes nouveau.modeset=1 i915.modeset=1 amdgpu.modeset=1 radeon.si_support=0 radeon.cik_support=0 amdgpu.si_support=1 amdgpu.cik_support=1 nvidia.modeset=1 nvidia_drm.modeset=1 DEEPIN_GFXMODE="|' /etc/default/grub >/dev/null
+			msg "Configuring GRUB..."
+			# Change GRUB config
+			sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=.*|GRUB_CMDLINE_LINUX_DEFAULT="quiet splash plymouth.enable=1 loglevel=4 libata.noacpi=1 acpi=force apm=power-off nowatchdog tsc=nowatchdog cryptomgr.notests no_timer_check rcupdate.rcu_expedited=1 intel_pstate=active amd_pstate=active cpuidle.governor=teo split_lock_detect=off clearcpuid=514 transparent_hugepage=never skew_tick=1 intremap=off nosoftlockup audit=0 nomce systemd.show_status=auto rd.udev.log_level=3 apparmor=1 security=apparmor vconsole.font=Uni2-Fixed16 intel_iommu=on amd_iommu=on tdx=on nvme_load=yes nouveau.modeset=1 i915.modeset=1 amdgpu.modeset=1 radeon.si_support=0 radeon.cik_support=0 amdgpu.si_support=1 amdgpu.cik_support=1 nvidia.modeset=1 nvidia_drm.modeset=1 DEEPIN_GFXMODE="|' /etc/default/grub >/dev/null
 
-		msg "Generating GRUB configuration files..."
-		update-grub &>/dev/null
+			msg "Generating GRUB configuration files..."
+			update-grub &>/dev/null
+		fi
 	fi
 
-	msg "Installation complete. Rebooting in 10 seconds..."
-	# Countdown before reboot
-	for i in $(seq 10 -1 1); do
-		printf "%d..." "$i"
-		sleep 1
-	done
-	echo
-	msg "Rebooting now..."
-	reboot
+	if ! $IS_UPGRADE; then
+		msg "Installation complete. Rebooting in 10 seconds..."
+		# Countdown before reboot
+		for i in $(seq 10 -1 1); do
+			printf "%d..." "$i"
+			sleep 1
+		done
+		echo
+		msg "Rebooting now..."
+		reboot
+	else
+		msg "Upgrade complete."
+	fi
 }
 
 post_upgrade() {
+	IS_UPGRADE=true
 	post_install
 }
