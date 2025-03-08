@@ -128,7 +128,8 @@ check() {
 }
 
 package() {
-  echo "optdepends='${optdepends[*]}'" > "${pkgdir}/usr/share/$pkgname/optdepends"
+  mkdir -p "${pkgdir}/usr/share/${pkgname}"
+  echo "optdepends='${optdepends[*]}'" > "${pkgdir}/usr/share/${pkgname}/optdepends"
 
 	cd "${srcdir}/${pkgname}"
 
