@@ -1,0 +1,13 @@
+{"timestamp":521796,"category":"session_restore","name":"backup_can_be_loaded_session_file","extra":{"path_key":"clean","loadfail_reason":"N/A","can_load":"true","glean_timestamp":"1741488914169"}}
+{"timestamp":521797,"category":"session_restore","name":"backup_can_be_loaded_session_file","extra":{"loadfail_reason":"N/A","path_key":"clean","glean_timestamp":"1741488914170","can_load":"true"}}
+{"timestamp":521798,"category":"session_restore","name":"shutdown_success_session_startup","extra":{"shutdown_reason":"N/A","shutdown_ok":"false","glean_timestamp":"1741488914171"}}
+{"timestamp":522295,"category":"webcompatreporting","name":"reason_dropdown","extra":{"setting":"required","glean_timestamp":"1741488914668"}}
+{"timestamp":522490,"category":"jsonfile","name":"load_autofillprofiles","extra":{"glean_timestamp":"1741488914864","value":""}}
+{"timestamp":522609,"category":"doh","name":"state_rollback","extra":{"value":"null","glean_timestamp":"1741488914983"}}
+{"timestamp":522927,"category":"normandy","name":"validation_failed_nimbus_experiment","extra":{"value":"add-an-image-to-pdf-with-alt-text-rollout","reason":"invalid-feature","feature":"addAnImageInPDF","glean_timestamp":"1741488915301"}}
+{"timestamp":522927,"category":"nimbus_events","name":"validation_failed","extra":{"glean_timestamp":"1741488915301","experiment":"add-an-image-to-pdf-with-alt-text-rollout","feature":"addAnImageInPDF","reason":"invalid-feature"}}
+{"timestamp":522928,"category":"nimbus_events","name":"is_ready","extra":{"glean_timestamp":"1741488915301"}}
+{"timestamp":523048,"category":"jsonfile","name":"load_logins","extra":{"glean_timestamp":"1741488915421","value":""}}
+{"timestamp":523062,"category":"upgrade_dialog","name":"trigger_reason","extra":{"glean_timestamp":"1741488915435","value":"not-major"}}
+{"timestamp":523221,"category":"extensions.data","name":"sync_usage_quotas","extra":{"items_over_quota":"0","total_size_bytes":"161","backend":"rust","addon_id":"addon@darkreader.org","glean_timestamp":"1741488915594","items_count":"6"}}
+{"timestamp":526187,"category":"doh","name":"state_shutdown","extra":{"value":"null","glean_timestamp":"1741488918560"}}
