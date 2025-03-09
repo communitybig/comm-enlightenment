@@ -23,7 +23,7 @@ declare pkgname=comm-"${WM}"
 
 msg() {
 	local msg="$1"
-	echo -e "${green}==>[comm-enlightenment] ${bold}${yellow}${msg}${reset}" >&2
+	echo -e "${green}==>[${pkgname}] ${bold}${yellow}${msg}${reset}" >&2
 }
 
 sh_load_optdepends() {
