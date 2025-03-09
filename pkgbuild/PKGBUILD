@@ -100,6 +100,8 @@ optdepends=(
   gvfs-onedrive            # Backend para Microsoft OneDrive
   gvfs-smb                 # Backend para compartilhamento de arquivos SMB/CIFS (Windows)
   gvfs-wsdd                # Backend para descoberta de serviços Web Services Dynamic Discovery (Windows)
+  conky                    # Light-weight system monitor for X, Wayland, and other things, too
+  conky-manager2           # GUI for managing Conky config files with options to browse and edit themes
 )
 
 # Automatically detect and use the correct install file
