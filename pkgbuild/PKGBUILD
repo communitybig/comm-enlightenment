@@ -55,7 +55,7 @@ optdepends=(
 
   # Interface gráfica e login
   lxdm                     # Gerenciador de login leve e rápido, usado principalmente no LXDE.
-  lightdm                  # Gerenciador de login leve
+  lightd                  # Gerenciador de login leve
   lightdm-slick-greeter
   lightdm-settings
   lightdm-gtk-greeter     # Interface gráfica para LightDM

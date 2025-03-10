@@ -136,7 +136,7 @@ EOF
 		msg "Creating ${DM^} user..."
 		useradd -r -s /usr/bin/nologin -M -d /var/lib/${DM} ${DM} &>/dev/null
 	else
-		msg "${DM^}Lxdm user already exists, skipping creation."
+		msg "${DM^} user already exists, skipping creation."
 	fi
 
 	msg "Setting up ${DM^} directory..."
