@@ -54,11 +54,11 @@ optdepends=(
   wireplumber              # Gerenciador de sessão para PipeWire
 
   # Interface gráfica e login
-  #lightdm                 # Gerenciador de login leve
-  #lightdm-gtk-greeter     # Interface gráfica para LightDM
-  #sddm                    # Gerenciador de login moderno, compatível com Wayland
   lxdm                     # Gerenciador de login leve e rápido, usado principalmente no LXDE.
   #lxdm-biglinux-theme     # Tema para o LXDM adaptado ao BigLinux
+  lightdm                 # Gerenciador de login leve
+  lightdm-gtk-greeter     # Interface gráfica para LightDM
+  sddm                    # Gerenciador de login moderno, compatível com Wayland
 
   # Extras para Wayland
   waybar                   # Barra de status alternativa para Wayland
