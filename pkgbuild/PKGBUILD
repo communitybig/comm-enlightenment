@@ -55,8 +55,9 @@ optdepends=(
 
   # Interface gráfica e login
   lxdm                     # Gerenciador de login leve e rápido, usado principalmente no LXDE.
-  #lxdm-biglinux-theme     # Tema para o LXDM adaptado ao BigLinux
-  lightdm                 # Gerenciador de login leve
+  lightdm                  # Gerenciador de login leve
+  lightdm-slick-greeter
+  lightdm-settings
   lightdm-gtk-greeter     # Interface gráfica para LightDM
   sddm                    # Gerenciador de login moderno, compatível com Wayland
 

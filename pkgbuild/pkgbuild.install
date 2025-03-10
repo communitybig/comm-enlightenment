@@ -19,6 +19,7 @@ export bold="\033[1m"
 export reset="\033[0m"
 declare IS_UPGRADE=false
 declare WM='enlightenment'
+declare DM='lightdm'
 declare pkgname=comm-"${WM}"
 
 msg() {
@@ -130,18 +131,17 @@ EOF
 		msg "${yellow}Warning: No compatible GPU detected. Skipping driver installation.${reset}"
 	fi
 
-	msg "Create the 'lxdm' user if it doesn't exist"
-	if ! id "lxdm" >/dev/null; then
-		msg "Creating Lxdm user..."
-		useradd -r -s /usr/bin/nologin -M -d /var/lib/lxdm lxdm &>/dev/null
+	msg "Create the ${DM^} user if it doesn't exist"
+	if ! id "${DM}" >/dev/null; then
+		msg "Creating ${DM^} user..."
+		useradd -r -s /usr/bin/nologin -M -d /var/lib/${DM} ${DM} &>/dev/null
 	else
-		msg "Lxdm user already exists, skipping creation."
+		msg "${DM^}Lxdm user already exists, skipping creation."
 	fi
 
-	# Ensure Lxdm directory exists with correct permissions
-	msg "Setting up Lxdm directory..."
-	mkdir -p /var/lib/lxdm >/dev/null
-	chown -R lxdm:lxdm /var/lib/lxdm >/dev/null
+	msg "Setting up ${DM^} directory..."
+	mkdir -p /var/lib/${DM} >/dev/null
+	chown -R ${DM}:${DM} /var/lib/${DM} >/dev/null
 
 	msg "Setting up user..."
 	user=$(awk -F: '$3 >= 1000 && $3 < 65000 { print $1; exit }' /etc/passwd)
@@ -167,9 +167,9 @@ EOF
 	fi
 
 	if ! $IS_UPGRADE; then
-		msg "Enabling Lxdm..."
-		if ! systemctl enable lxdm &>/dev/null; then
-			msg "${red}Error: It went wrong when activating lxdm"
+		msg "Enabling ${DM^}..."
+		if ! systemctl enable ${DM} &>/dev/null; then
+			msg "${red}Error: It went wrong when activating ${DM^}"
 		fi
 	fi
 
